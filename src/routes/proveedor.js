@@ -68,7 +68,7 @@ router.put("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
     const { id } = req.params;
     proveedorSchema
-    .remove({ _id: id })
+    .deleteOne({ _id: id })
     .then((data) => res.json(data))
     .catch((err) => res.json({message: err}));
 });

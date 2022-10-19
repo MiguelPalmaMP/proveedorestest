@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const proveedorSchema = mongoose.Schema({
     client_id: {
         type: String,
+        unique: true,
         maxLength: 40
     },
     email: {

@@ -28,7 +28,7 @@ PUT http://localhost:9000/api/proveedores/634f3e03f8336f25b20d78d2 HTTP/1.1
 Content-Type: application/json
 
 {
-    "client_id" : "DP12345",
+    "client_id" : "MP12345",
     "email" : "david.poot@macropay.mx",
     "rfc" : "DEIVID901002TN2",
     "city" : "Cancun",
@@ -43,4 +43,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:9000/api/proveedores/634f3e03f8336f25b20d78d2 HTTP/1.1
+DELETE http://localhost:9000/api/proveedores/63503a0d8feba3763232969a HTTP/1.1
