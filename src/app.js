@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const proveedorRoutes = require("./routes/proveedor");
+const mongodb = require("./config/db");
 require('dotenv').config();
 
 
@@ -9,7 +10,7 @@ const port = process.env.PORT || 9000;
 
 //middleware
 app.use(express.json());
-app.use("/api", proveedorRoutes);
+app.use("/api/proveedores", proveedorRoutes);
 
 //routes
 app.get('/', (req, res) => {
@@ -18,9 +19,5 @@ app.get('/', (req, res) => {
 
 //mongodb connection
 
-mongoose
-	.connect(process.env.MONGODB_URI)
-	.then(() => console.log("Connected to Atlas"))
-	.catch((err) => console.error(err));
-
+mongodb();
 app.listen(port, () => console.log("server listening on port", port));

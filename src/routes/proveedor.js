@@ -3,7 +3,7 @@ const router = express.Router();
 const proveedorSchema = require("../models/proveedorModel");
 
 // crete proveedor
-router.post("/proveedores", (req, res) => {
+router.post("/", (req, res) => {
     const proveedor = proveedorSchema(req.body);
     proveedor
     .save()
@@ -12,7 +12,7 @@ router.post("/proveedores", (req, res) => {
 });
 
 // get proveedores
-router.get("/proveedores", (req, res) => {
+router.get("/", (req, res) => {
     proveedorSchema
     .find()
     .then((data) => res.json(data))
@@ -20,7 +20,7 @@ router.get("/proveedores", (req, res) => {
 });
 
 // get a proveedor
-router.get("/proveedores/:id", (req, res) => {
+router.get("/:id", (req, res) => {
     const { id } = req.params;
     proveedorSchema
     .findById(id)
@@ -29,7 +29,7 @@ router.get("/proveedores/:id", (req, res) => {
 });
 
 // update a proveedor
-router.put("/proveedores/:id", (req, res) => {
+router.put("/:id", (req, res) => {
     const { id } = req.params;
     const {
         client_id,
@@ -65,7 +65,7 @@ router.put("/proveedores/:id", (req, res) => {
 });
 
 // delete a proveedor
-router.delete("/proveedores/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
     const { id } = req.params;
     proveedorSchema
     .remove({ _id: id })
